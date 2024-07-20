@@ -622,7 +622,39 @@ html {
 body {
     -ms-overflow-style: -ms-autohiding-scrollbar; /* ใช้สกอลบาร์ที่ซ่อนอัตโนมัติใน IE */
 }
+/* สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
 
+    header img {
+        width: 80px; /* ปรับขนาดของรูปภาพให้เหมาะสมกับหน้าจอมือถือ */
+        height: auto;
+    }
+
+    .container {
+        padding: 10px; /* ลด padding สำหรับหน้าจอขนาดเล็ก */
+    }
+
+    .hero {
+        background-size: cover;
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 24px; /* ลดขนาดของข้อความหัวเรื่อง */
+    }
+
+    .hero p {
+        font-size: 18px; /* ลดขนาดของข้อความเนื้อหา */
+    }
+
+    .btn {
+        width: 100%; /* ปรับขนาดปุ่มให้เต็มความกว้างของหน้าจอ */
+    }
+}
 
 
 
