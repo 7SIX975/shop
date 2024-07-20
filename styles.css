@@ -1,0 +1,653 @@
+@font-face {
+    font-family: 'SFThonburi';
+    src: url('fonts/SFThonburi-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+body {
+    font-family: 'SFThonburi', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.hero {
+    background-image: url('img/113.gif'); /* ใช้ภาพพื้นหลังใหม่ */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* ตั้งค่าให้เต็มหน้าจอ */
+    overflow: hidden; /* ซ่อนส่วนเกิน */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* เพิ่มเลเยอร์สีดำโปร่งแสง */
+    z-index: 1;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 2s ease-in-out; /* เพิ่มเอฟเฟกต์การเลื่อนขึ้น */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+}
+
+.hero a.btn {
+    margin: 10px;
+}
+
+
+.swiper-container {
+    width: 100%;
+    height: 300px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.product {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.product h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.product p {
+    font-size: 24px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.product button {
+    background-color: #0070c9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer h5 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: #666;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+.swiper-slide {
+    position: relative;
+    text-align: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 170px; /* ปรับระยะจากด้านล่าง */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.7); /* เปลี่ยนสีพื้นหลังและความโปร่งแสง */
+    color: rgb(0, 0, 0);
+    padding: 20px; /* เพิ่มการ padding */
+    border-radius: 90px; /* เพิ่มความโค้งมนของขอบ */
+    max-width: 80%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    box-shadow: 0 9px 15px rgba(0, 0, 0, 0.3); /* เพิ่มเงา */
+}
+
+.swiper-slide-active .slide-content {
+    opacity: 1;
+}
+
+.slide-content h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+}
+
+.slide-content p {
+    margin: 0;
+    font-size: 16px;
+}
+.review-slider {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+.review {
+    background: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.reviewer-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.reviewer-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.review-stars {
+    margin-bottom: 10px;
+}
+
+.review-stars .fa-star, .review-stars .fa-star-half-alt {
+    color: #FFD700; /* สีทอง */
+}
+
+.review-stars .fa-star-half-alt {
+    position: relative;
+}
+
+.review-stars .fa-star-half-alt:before {
+    content: "\f005"; /* ไอคอนดาวเต็มดวง */
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #FFD700; /* สีทอง */
+}
+
+.review-text {
+    font-size: 16px;
+    color: #555;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #333;
+}
+
+.swiper-pagination-bullet {
+    background: #333;
+}
+
+
+.swiper-button-next, .swiper-button-prev {
+    color: #333;
+}
+
+.swiper-pagination-bullet {
+    background: #333;
+}
+.swiper-pagination {
+    display: none;
+}
+.navbar {
+    transition: top 0.3s, filter 0.3s; /* เพิ่มการ transition สำหรับ filter */
+}
+.navbar.hidden {
+    top: -80px; /* ซ่อนเมนู */
+    filter: blur(10px); /* เพิ่มการเบลอ */
+}
+body {
+    margin-top: 60px; /* เพิ่มการยกเนื้อหาเพื่อลดการบังของเมนู */
+}
+.promo-section {
+    background-color: #f8f8f8;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.promo-section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.promo-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.promo-section p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.promo-section .btn {
+    margin-top: 10px;
+}
+
+.promo-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767px) {
+    .promo-section {
+        text-align: center;
+    }
+
+    .promo-img {
+        margin-top: 20px;
+    }
+}
+.story-section {
+    background-color: #f8f8f8;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+}
+
+.story-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.story-content {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+.gallery-section {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+}
+
+.gallery-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gallery-item {
+    flex: 1 1 calc(25% - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.features-section {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+}
+
+.features-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.feature-item {
+    flex: 1 1 calc(50% - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: white;
+    padding: 20px;
+    text-align: left;
+}
+
+.feature-item img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.feature-item p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.testimonials-section {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+}
+
+.testimonials-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.testimonial-item {
+    flex: 1 1 calc(50% - 20px);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.customer-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.team-section {
+    background-color: #f8f8f8;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+}
+
+.team-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.team-member {
+    flex: 1 1 calc(50% - 20px);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.team-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.awards-section {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+}
+
+.awards-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.awards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.award-item {
+    flex: 1 1 calc(50% - 20px);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.award-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.btn-primary {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* เพิ่มการเคลื่อนไหว */
+}
+
+.btn-primary:hover {
+    background-color: #005fa3;
+    transform: scale(1.05); /* ขยายเล็กน้อยเมื่อวางเมาส์ */
+}
+
+.btn-primary:active {
+    transform: scale(0.95); /* ลดขนาดเล็กน้อยเมื่อคลิก */
+}
+/* สกอลบาร์ทั่วไป */
+::-webkit-scrollbar {
+    width: 8px; /* ความกว้างของสกอลบาร์ */
+    height: 8px; /* ความสูงของสกอลบาร์สำหรับแนวนอน */
+}
+
+/* รางของสกอลบาร์ */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* สีของราง */
+    border-radius: 10px; /* ทำให้มุมของรางมีความโค้งมน */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); /* เพิ่มเงาด้านใน */
+}
+
+/* ตัวเลื่อนของสกอลบาร์ */
+::-webkit-scrollbar-thumb {
+    background: #888; /* สีของตัวเลื่อน */
+    border-radius: 10px; /* ทำให้มุมของตัวเลื่อนมีความโค้งมน */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); /* เพิ่มเงาด้านใน */
+}
+
+/* ตัวเลื่อนเมื่อวางเมาส์เหนือ */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* สีของตัวเลื่อนเมื่อวางเมาส์เหนือ */
+}
+
+/* สำหรับ Firefox */
+html {
+    scrollbar-width: thin; /* กำหนดความหนาของสกอลบาร์ */
+    scrollbar-color: #888 #f1f1f1; /* กำหนดสีของตัวเลื่อนและราง */
+}
+
+/* สำหรับ IE10+ */
+body {
+    -ms-overflow-style: -ms-autohiding-scrollbar; /* ใช้สกอลบาร์ที่ซ่อนอัตโนมัติใน IE */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
