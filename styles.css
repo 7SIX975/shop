@@ -1,684 +1,673 @@
-@font-face {
-    font-family: 'SFThonburi';
-    src: url('fonts/SFThonburi-Bold.ttf') format('truetype');
-    font-weight: bold;
-}
-
+/* เริ่มต้นด้วยการตั้งค่าพื้นฐานสำหรับหน้าเว็บ */
 body {
-    font-family: 'SFThonburi', Arial, sans-serif;
+    font-family: "SF Thonburi", Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* สไตล์สำหรับส่วนหัว (Header) */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #00796b, #004d40);
+    color: white;
+    padding: 20px 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.5s ease, padding 0.5s ease;
+    box-sizing: border-box; /* ทำให้ padding รวมอยู่ใน width */
+}
+
+#header .logo-container {
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+#header nav {
+    margin-left: auto;
+    padding-right: 20px;
+}
+
+#header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+#header nav ul li {
+    display: inline;
+}
+
+#header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 20px;
+    line-height: 1.6;
+    transition: color 0.5s ease, background-color 0.5s ease, transform 0.3s ease;
+    border-radius: 8px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+#header nav ul li a:hover {
+    background-color: #ff6f00;
+    color: white;
+    transform: scale(1.1);
+    z-index: 1;
+}
+/* สไตล์สำหรับส่วนหัว (Header) */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #00796b, #004d40);
+    color: white;
+    padding: 20px 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.5s ease, padding 0.5s ease;
     box-sizing: border-box;
 }
 
-header {
-    background-color: #f8f8f8;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
+/* ปรับแต่งโลโก้ */
+.logo-container {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
 }
 
+.logo-container h1 {
+    margin: 0;
+    font-size: 2.8em;
+    font-family: 'Pattaya', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffcc00;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* เพิ่มเงาให้กับโลโก้ */
+    animation: fadeIn 1s ease-out;
+    display: flex;
+    align-items: center;
+}
+
+/* โลโก้ที่เป็นภาพ */
+.logo-container img {
+    width: 50px; /* ขนาดของโลโก้ภาพ */
+    height: auto;
+    margin-right: 15px; /* ระยะห่างระหว่างภาพโลโก้กับข้อความ */
+    animation: rotateIn 1.5s ease-out; /* เพิ่มแอนิเมชันให้กับภาพโลโก้ */
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rotateIn {
+    0% { transform: rotate(-360deg); }
+    100% { transform: rotate(0deg); }
+}
+@font-face {
+    font-family: 'CustomFont';
+    src: url('fonts/SFThonburi-Bold.ttf') format('woff2'),
+         url('fonts/SFThonburi-Regular.ttf') format('woff'),
+         url('fonts/SFThonburi-Semibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ใช้ฟอนต์ที่คุณประกาศในโลโก้ */
+.logo-container h1 {
+    margin: 0;
+    font-size: 2.8em;
+    font-family: 'CustomFont', sans-serif; /* ใช้ฟอนต์ที่คุณอัปโหลด */
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffcc00;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 1s ease-out;
+    display: flex;
+    align-items: center;
+}
+
+/* เพิ่มพื้นที่ด้านบนสำหรับเนื้อหาหลัง header */
+body {
+    padding-top: 20px; /* ปรับตามขนาดของ header */
+}
+
+
+/* ปรับแต่งเมนูให้นำเสนอแบบแนวนอน */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* ปรับแต่งแต่ละลิ้งค์ในเมนู */
 nav ul li {
     margin: 0 15px;
 }
 
 nav ul li a {
+    color: white;
     text-decoration: none;
-    color: #333;
     font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.hero {
-    background-image: url('img/(3).gif'); /* ใช้ภาพพื้นหลังใหม่ */
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    padding: 100px 20px;
-    position: relative;
+/* เพิ่มการเปลี่ยนสีเมื่อเมาส์อยู่บนลิ้งค์ */
+nav ul li a:hover {
+    background-color: white;
+    color: #009688;
+    border-radius: 20px;
+}
+
+/* ตั้งค่าสำหรับเนื้อหาในแต่ละส่วน */
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+h1, h2 {
+    color: #ffcc00;
+}
+
+/* ส่วนท้าย (Footer) */
+footer {
+    background-color: #004d40;
     color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 5px solid #00796b;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    display: flex;
+    gap: 20px;
+}
+
+.social-links li {
+    display: inline;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ffcc00;
+}
+
+
+body {
+    font-family: "SF Thonburi", Arial, sans-serif;
+}
+/* ส่วนสถานที่ท่องเที่ยว */
+#places {
+    padding: 20px;
+    background-color: #e0f7fa;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#places h2 {
+    text-align: center;
+    color: #bbbbb7;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.place-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.place-list li {
+    background-color: #ffffff;
+    border: 1px solid #009688;
+    border-radius: 8px;
+    margin: 10px;
+    width: 45%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.place-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.place-list a {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100vh; /* ตั้งค่าให้เต็มหน้าจอ */
-    overflow: hidden; /* ซ่อนส่วนเกิน */
+    padding: 15px;
+    text-decoration: none;
+    color: #00796b;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: left;
 }
 
-.hero-overlay {
+.place-number {
+    font-weight: bold;
+    color: #004d40;
+    margin-right: 15px;
+    font-size: 1.3em;
+    width: 30px;
+    text-align: right;
+}
+/* ปรับแต่งส่วนหน้าแรก */
+#home {
+    background-image: url('img/.jpg'); /* พื้นหลังของส่วน #home */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    position: relative;
+}
+
+.home-content {
+    background-image: url('img/4.jpg'); /* พื้นหลังรูปภาพของข้อความ */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#home h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#home p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.explore-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #ffffff;
+    background-color: #00796b;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.explore-button:hover {
+    background-color: #004d40;
+    transform: scale(1.05);
+}
+
+
+
+/* ปรับแต่งปุ่มลูกศรสำหรับเปลี่ยนสไลด์ */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    margin-top: -25px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 24px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    user-select: none;
+    z-index: 10; /* ทำให้ปุ่มอยู่ด้านหน้าสุด */
+    border: none; /* ลบขอบที่ไม่ต้องการ */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* เพิ่มเงาเพื่อให้ดูนูนขึ้น */
+}
+
+.next {
+    right: 10px; /* ตำแหน่งที่ชิดขอบขวามากขึ้น */
+}
+
+.prev {
+    left: 10px; /* ตำแหน่งที่ชิดขอบซ้ายมากขึ้น */
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1); /* ขยายขนาดเล็กน้อยเมื่อ hover */
+}
+
+
+/* เอ็ฟเฟ็กต์การเปลี่ยนภาพ */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* เอ็ฟเฟ็กต์การเปลี่ยนภาพ */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+/* ส่วนติดต่อเรา */
+#contact {
+    background-color: #00796b;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.contact-info {
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #ffcc00; /* สีไอคอน */
+}
+
+.contact-info a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #fff;
+}
+/* สไตล์สำหรับ hero-section */
+#hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100vw; /* ครอบคลุมเต็มหน้าจอ */
+    background-image: url('img/4.jpg'); /* ใส่ภาพพื้นหลัง */
+    background-size: cover; /* ทำให้ภาพพื้นหลังครอบคลุมพื้นที่ */
+    background-position: center; /* จัดภาพให้อยู่ตรงกลาง */
+    background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
+    background-attachment: fixed; /* ทำให้ภาพพื้นหลังเป็นแบบ Parallax */
+    display: flex; /* ใช้ Flexbox จัดวางเนื้อหา */
+    justify-content: center; /* จัดวางเนื้อหาให้อยู่กึ่งกลางแนวนอน */
+    align-items: center; /* จัดวางเนื้อหาให้อยู่กึ่งกลางแนวตั้ง */
+    text-align: center;
+    color: #ffffff; /* ใช้สีขาวสำหรับข้อความเพื่อความคมชัด */
+    overflow: hidden; /* ป้องกันเนื้อหาล้นออกจากกรอบ */
+}
+
+#hero-section .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* เพิ่มเลเยอร์สีดำโปร่งแสง */
-    z-index: 1;
+    background: rgba(255, 255, 255, 0.7); /* เพิ่มความเข้มให้ภาพพื้นหลังด้วยสีดำโปร่งแสง */
+    backdrop-filter: blur(10px); /* ทำให้ภาพพื้นหลังเบลอเล็กน้อย */
+    z-index: 1; /* ทำให้ overlay อยู่ด้านล่างของเนื้อหา */
 }
 
-.hero-text {
+.hero-content {
     position: relative;
-    z-index: 2;
-    animation: fadeInUp 2s ease-in-out; /* เพิ่มเอฟเฟกต์การเลื่อนขึ้น */
+    z-index: 2; /* ทำให้เนื้อหาอยู่เหนือ overlay */
+    max-width: 70%; /* กำหนดความกว้างสูงสุดของเนื้อหา */
+    text-align: center;
+}
+
+#hero-section h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* เพิ่มเงาให้ข้อความเพื่อความโดดเด่น */
+    animation: fadeInDown 1s ease-out; /* แอนิเมชันการเลื่อนลง */
+}
+
+#hero-section p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* เพิ่มเงาให้ข้อความ */
+    line-height: 1.6;
+    animation: fadeInUp 1s ease-out; /* แอนิเมชันการเลื่อนขึ้น */
+}
+
+.explore-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #ffffff;
+    background-color: #ff6f00; /* สีปุ่มสีส้ม */
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* แอนิเมชันการเปลี่ยนสีและขยายขนาด */
+    animation: bounceIn 1.5s ease; /* แอนิเมชันการ bounce */
+}
+
+.explore-button:hover {
+    background-color: #e65100; /* เปลี่ยนสีปุ่มเมื่อ hover */
+    transform: scale(1.05); /* ขยายปุ่มเล็กน้อยเมื่อ hover */
+}
+
+/* Animation Keyframes */
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
     0% {
         opacity: 0;
-        transform: translateY(20px);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(0.9, 0.9, 0.9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(0.97, 0.97, 0.97);
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale3d(1, 1, 1);
     }
 }
-
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 24px;
-}
-
-.hero a.btn {
-    margin: 10px;
-}
-
-
-.swiper-container {
-    width: 100%;
-    height: 300px;
-}
-
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #ffffff;
+/* สไตล์สำหรับส่วน about */
+#about {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.swiper-slide img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-}
-
-.product {
+    flex-direction: column;
     text-align: center;
-    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 60px auto;
 }
 
-.product h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.product p {
-    font-size: 24px;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.product button {
-    background-color: #0070c9;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-footer {
-    background-color: #f8f8f8;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-}
-
-footer h5 {
-    margin-bottom: 15px;
-    font-size: 18px;
-    color: #333;
-}
-
-footer ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-footer ul li {
-    margin-bottom: 10px;
-}
-
-footer ul li a {
-    color: #666;
-    text-decoration: none;
-}
-
-footer ul li a:hover {
-    text-decoration: underline;
-}
-.swiper-slide {
+.image-container {
     position: relative;
-    text-align: center;
-}
-
-.swiper-slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.slide-content {
-    position: absolute;
-    bottom: 170px; /* ปรับระยะจากด้านล่าง */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(255, 255, 255, 0.7); /* เปลี่ยนสีพื้นหลังและความโปร่งแสง */
-    color: rgb(0, 0, 0);
-    padding: 20px; /* เพิ่มการ padding */
-    border-radius: 90px; /* เพิ่มความโค้งมนของขอบ */
-    max-width: 80%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    box-shadow: 0 9px 15px rgba(0, 0, 0, 0.3); /* เพิ่มเงา */
-}
-
-.swiper-slide-active .slide-content {
-    opacity: 1;
-}
-
-.slide-content h2 {
-    margin: 0 0 10px;
-    font-size: 24px;
-}
-
-.slide-content p {
-    margin: 0;
-    font-size: 16px;
-}
-.review-slider {
-    padding: 50px 0;
-    background-color: #f8f8f8;
-}
-
-.review {
-    background: white;
-    border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 50px;
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.review:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.reviewer-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.reviewer-name {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.review-stars {
-    margin-bottom: 10px;
-}
-
-.review-stars .fa-star, .review-stars .fa-star-half-alt {
-    color: #FFD700; /* สีทอง */
-}
-
-.review-stars .fa-star-half-alt {
-    position: relative;
-}
-
-.review-stars .fa-star-half-alt:before {
-    content: "\f005"; /* ไอคอนดาวเต็มดวง */
-    position: absolute;
-    left: 0;
-    width: 50%;
     overflow: hidden;
-    color: #FFD700; /* สีทอง */
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%; /* ปรับให้เต็มความกว้าง */
+    display: flex;
+    justify-content: center; /* จัดรูปภาพให้อยู่กึ่งกลาง */
 }
 
-.review-text {
-    font-size: 16px;
+.about-image {
+    width: 80%; /* ปรับขนาดรูปภาพให้เป็น 80% ของ .image-container */
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.image-container:hover .about-image {
+    transform: scale(1.1); /* ขยายภาพเล็กน้อยเมื่อ hover */
+}
+
+.text-content {
+    max-width: 800px;
+    text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+    margin: 0 auto;
+}
+
+#about h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #00796b;
+}
+
+#about p {
+    font-size: 1.2em;
+    line-height: 1.8;
     color: #555;
-}
-
-.swiper-button-next, .swiper-button-prev {
-    color: #333;
-}
-
-.swiper-pagination-bullet {
-    background: #333;
-}
-
-
-.swiper-button-next, .swiper-button-prev {
-    color: #333;
-}
-
-.swiper-pagination-bullet {
-    background: #333;
-}
-.swiper-pagination {
-    display: none;
-}
-.navbar {
-    transition: top 0.3s, filter 0.3s; /* เพิ่มการ transition สำหรับ filter */
-}
-.navbar.hidden {
-    top: -80px; /* ซ่อนเมนู */
-    filter: blur(10px); /* เพิ่มการเบลอ */
-}
-body {
-    margin-top: 60px; /* เพิ่มการยกเนื้อหาเพื่อลดการบังของเมนู */
-}
-.promo-section {
-    background-color: #f8f8f8;
-    padding: 50px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.promo-section:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.promo-section h2 {
-    font-size: 32px;
     margin-bottom: 20px;
+    text-align: justify; /* จัดข้อความให้ดูเรียบร้อย */
 }
 
-.promo-section p {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 10px;
+.explore-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #ffffff;
+    background-color: #ff6f00;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.promo-section .btn {
-    margin-top: 10px;
+.explore-button:hover {
+    background-color: #e65100;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
-
-.promo-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 767px) {
-    .promo-section {
-        text-align: center;
-    }
-
-    .promo-img {
-        margin-top: 20px;
-    }
-}
-.story-section {
-    background-color: #f8f8f8;
-    padding: 50px 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 40px 0;
-}
-
-.story-title {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.story-content {
-    font-size: 18px;
-    color: #666;
-    line-height: 1.6;
-}
-.gallery-section {
-    background-color: #ffffff;
-    padding: 50px 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 40px 0;
-}
-
-.gallery-title {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.gallery-item {
-    flex: 1 1 calc(25% - 20px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.gallery-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-.features-section {
-    background-color: #ffffff;
-    padding: 50px 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 40px 0;
-}
-
-.features-title {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.feature-item {
-    flex: 1 1 calc(50% - 20px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: white;
-    padding: 20px;
-    text-align: left;
-}
-
-.feature-item img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.feature-item h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.feature-item p {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.6;
-}
-
-.feature-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-.testimonials-section {
-    background-color: #ffffff;
-    padding: 50px 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 40px 0;
-}
-
-.testimonials-title {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.testimonials {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.testimonial-item {
-    flex: 1 1 calc(50% - 20px);
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.customer-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-.team-section {
-    background-color: #f8f8f8;
-    padding: 50px 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 40px 0;
-}
-
-.team-title {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.team {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.team-member {
-    flex: 1 1 calc(50% - 20px);
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.team-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-.awards-section {
-    background-color: #ffffff;
-    padding: 50px 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 40px 0;
-}
-
-.awards-title {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.awards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.award-item {
-    flex: 1 1 calc(50% - 20px);
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.award-item img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-.btn-primary {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 30px;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* เพิ่มการเคลื่อนไหว */
-}
-
-.btn-primary:hover {
-    background-color: #005fa3;
-    transform: scale(1.05); /* ขยายเล็กน้อยเมื่อวางเมาส์ */
-}
-
-.btn-primary:active {
-    transform: scale(0.95); /* ลดขนาดเล็กน้อยเมื่อคลิก */
-}
-/* สกอลบาร์ทั่วไป */
-::-webkit-scrollbar {
-    width: 8px; /* ความกว้างของสกอลบาร์ */
-    height: 8px; /* ความสูงของสกอลบาร์สำหรับแนวนอน */
-}
-
-/* รางของสกอลบาร์ */
-::-webkit-scrollbar-track {
-    background: #f1f1f1; /* สีของราง */
-    border-radius: 10px; /* ทำให้มุมของรางมีความโค้งมน */
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); /* เพิ่มเงาด้านใน */
-}
-
-/* ตัวเลื่อนของสกอลบาร์ */
-::-webkit-scrollbar-thumb {
-    background: #888; /* สีของตัวเลื่อน */
-    border-radius: 10px; /* ทำให้มุมของตัวเลื่อนมีความโค้งมน */
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); /* เพิ่มเงาด้านใน */
-}
-
-/* ตัวเลื่อนเมื่อวางเมาส์เหนือ */
-::-webkit-scrollbar-thumb:hover {
-    background: #555; /* สีของตัวเลื่อนเมื่อวางเมาส์เหนือ */
-}
-
-/* สำหรับ Firefox */
-html {
-    scrollbar-width: thin; /* กำหนดความหนาของสกอลบาร์ */
-    scrollbar-color: #888 #f1f1f1; /* กำหนดสีของตัวเลื่อนและราง */
-}
-
-/* สำหรับ IE10+ */
-body {
-    -ms-overflow-style: -ms-autohiding-scrollbar; /* ใช้สกอลบาร์ที่ซ่อนอัตโนมัติใน IE */
-}
-/* สำหรับหน้าจอขนาดเล็ก */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-
-    header img {
-        width: 80px; /* ปรับขนาดของรูปภาพให้เหมาะสมกับหน้าจอมือถือ */
-        height: auto;
-    }
-
-    .container {
-        padding: 10px; /* ลด padding สำหรับหน้าจอขนาดเล็ก */
-    }
-
-    .hero {
-        background-size: cover;
-        text-align: center;
-        padding: 50px 20px;
-    }
-
-    .hero h1 {
-        font-size: 24px; /* ลดขนาดของข้อความหัวเรื่อง */
-    }
-
-    .hero p {
-        font-size: 18px; /* ลดขนาดของข้อความเนื้อหา */
-    }
-
-    .btn {
-        width: 100%; /* ปรับขนาดปุ่มให้เต็มความกว้างของหน้าจอ */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
