@@ -3,242 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>เที่ยวชัยนาท - แนะนำสถานที่ท่องเที่ยว</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Shop - สินค้าคุณภาพเยี่ยม</title>
-        <meta name="description" content="ร้านค้าออนไลน์ที่นำเสนอสินค้าคุณภาพเยี่ยม บริการเป็นกันเอง และราคาสุดคุ้ม">
-        <meta name="keywords" content="ร้านค้าออนไลน์, สินค้าคุณภาพ, ราคาสุดคุ้ม, บริการเป็นกันเอง">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OverlayScrollbars/1.13.0/css/OverlayScrollbars.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OverlayScrollbars/1.13.0/js/jquery.overlayScrollbars.min.js"></script>
-
-    </head>
     
-    
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <a class="navbar-brand" href="#"><i class="fas fa-shopping-cart"></i> GPTShop</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">ร้าน</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">วิธีใช้</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">ทำไม?</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">สนใจ!</a></li>
-                    
-                    <li class="nav-item"><a class="nav-link" href="#">บริการช่วยเหลือ</a></li>
-                    <a href="#" class="btn btn-primary"><i class="fas fa-check"></i> AI FREE NOW</a>
-                </ul>
-            </div>
-            </div>
+    <header id="header">
+        <div class="logo-container">
+            <h1>เที่ยวชัยนาท</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="fas fa-home"> </a></li>
+                <li><a href="#places" class="fas fa-map-marked-alt"></a></li>
+                <li><a href="#contact" class="fas fa-comment"></a></li>
+            </ul>
         </nav>
     </header>
-
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        let lastScrollTop = 0;
-        window.addEventListener("scroll", function() {
-            let st = window.pageYOffset || document.documentElement.scrollTop;
-            const navbar = document.querySelector(".navbar");
-            if (st > lastScrollTop) {
-                navbar.classList.add("hidden"); // ซ่อนเมนูและเพิ่มการเบลอ
-            } else {
-                navbar.classList.remove("hidden"); // แสดงเมนูและยกเลิกการเบลอ
-            }
-            lastScrollTop = st <= 0 ? 0 : st; // สำหรับ Mobile หรือ negative scrolling
-        }, false);
-    </script>
-
-    
-
-<section class="hero text-center" data-aos="fade-up">
-    <div class="hero-overlay"></div>
-    <div class="hero-text">
-        <h1>ยินดีต้อนรับสู่ IRL</h1>
-        <p>AI การเรียนรู้ เสมือนจริง แห่งอนาคต</p>
-        <a href="#" class="btn btn-primary"><i class="fas fa-check"></i> สนใจ</a>
-<a href="#" class="btn btn-outline-secondary"><i class="fas fa-question"></i> ทำไม</a>
-    </div>
-</section>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-AOS.init();
-</script>
-
-<section class="swiper-container review-slider">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <div class="review">
-                
-                <h3 class="reviewer-name">สมชาย ใจดี</h3>
-                <div class="review-stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>
-                <p class="review-text">"สินค้าดีมาก คุณภาพเยี่ยม บริการประทับใจ"</p>
-            </div>
-        </div>
-        
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- Add Navigation -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-</section>
-<section class="features-section">
-    <div class="container">
-        <h2 class="features-title">ข้อดีของเรา</h2>
-        <div class="features">
-            <div class="feature-item" data-aos="fade-right">
-                <img src="img/feature1.jpg" alt="Feature Image 1">
-                <h3>คุณภาพเยี่ยม</h3>
-                <p>สินค้าของเราผ่านการคัดสรรมาอย่างดีเพื่อให้คุณได้รับสิ่งที่ดีที่สุด</p>
-            </div>
-            <div class="feature-item" data-aos="fade-left" data-aos-delay="100">
-                <img src="img/feature2.jpg" alt="Feature Image 2">
-                <h3>บริการที่เป็นกันเอง</h3>
-                <p>ทีมงานของเราพร้อมให้บริการคุณด้วยความเป็นกันเองและมืออาชีพ</p>
-            </div>
-            <div class="feature-item" data-aos="fade-right" data-aos-delay="200">
-                <img src="img/feature3.jpg" alt="Feature Image 3">
-                <h3>ราคาไม่แพง</h3>
-                <p>เรามุ่งมั่นที่จะนำเสนอสินค้าที่มีคุณภาพในราคาที่คุณพึงพอใจ</p>
-            </div>
-            <div class="feature-item" data-aos="fade-left" data-aos-delay="300">
-                <img src="img/feature4.jpg" alt="Feature Image 4">
-                <h3>จัดส่งรวดเร็ว</h3>
-                <p>ระบบการจัดส่งของเรารวดเร็วและมีประสิทธิภาพ เพื่อให้คุณได้รับสินค้าทันใจ</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-<section class="gallery-section">
-    <div class="container">
-        <h2 class="gallery-title">แกลเลอรีรูปภาพ</h2>
-        <div class="gallery">
-            <div class="gallery-item" data-aos="fade-up">
-                <img src="img/40.png" alt="Gallery Image 1">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                <img src="img/48.png" alt="Gallery Image 2">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                <img src="img/42.png" alt="Gallery Image 3">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-                <img src="img/43.png" alt="Gallery Image 4">
-            </div>
-            <div class="gallery-item" data-aos="fade-up">
-                <img src="img/40.png" alt="Gallery Image 1">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                <img src="img/48.png" alt="Gallery Image 2">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                <img src="img/42.png" alt="Gallery Image 3">
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-                <img src="img/43.png" alt="Gallery Image 4">
-            </div>
-        </div>
-    </div>
-</section>
-
-
-    <section class="container my-5 promo-section">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h2>ให้ช่วยสอนก็ได้</h2>
-                <p>ในราคาประหยัดเพื่อการศึกษา</p>
-                <p>ChatGPT4o</p>
-                <p>อย่ารอช้า กดเลือกซื้อเลย!</p>
-                <a href="#" class="btn btn-primary">เลือกซื้อ</a>
-            </div>
-            <div class="col-md-6 text-center">
-                <img src="img/5..jpg" alt="Promotion" class="img-fluid promo-img">
-            </div>
-        </div>
-    </section>
-    
-    <section class="container my-5 promo-section">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h2>ช่วยทำการบ้านก็ได้</h2>
-                <p>ในราคาประหยัดเพื่อการศึกษา</p>
-                <p>ChatGPT4o</p>
-                <p>อย่ารอช้า กดเลือกซื้อเลย!</p>
-                <a href="#" class="btn btn-primary">เลือกซื้อ</a>
-            </div>
-            <div class="col-md-6 text-center">
-                <img src="img/5..jpg" alt="Promotion" class="img-fluid promo-img">
-            </div>
+    <section id="hero-section">
+        <div class="hero-content">
+            <h2>ยินดีต้อนรับสู่เว็บไซต์เที่ยวชัยนาท</h2>
+            <p>ค้นพบ 10 สถานที่ท่องเที่ยวที่คุณไม่ควรพลาดในจังหวัดชัยนาท!</p>
+            <br>
+            <br>
+           
+            <a href="#places" class="explore-button">สำรวจสถานที่ท่องเที่ยว</a>
         </div>
     </section>
     
     
-    <footer class="bg-light text-center py-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>เลือกซื้อ</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Mac</a></li>
-                        <li><a href="#">iPad</a></li>
-                        <li><a href="#">iPhone</a></li>
-                        <li><a href="#">Apple Watch</a></li>
-                        <li><a href="#">อุปกรณ์เสริม</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>ลิงก์ด่วน</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">ค้นหาร้าน</a></li>
-                        <li><a href="#">สถานะคำสั่งซื้อ</a></li>
-                        <li><a href="#">Apple Trade In</a></li>
-                        <li><a href="#">บริการด้านการเงิน</a></li>
-                        <li><a href="#">ข้อเสนอสำหรับนักศึกษา</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>เลือกซื้อในร้านค้าเฉพาะ</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">การศึกษา</a></li>
-                        <li><a href="#">ธุรกิจ</a></li>
-                    </ul>
-                </div>
+    <section id="home">
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="img/6.jpg" alt="สถานที่ท่องเที่ยว 1" style="width:100%">
+                <div class="text">สถานที่ท่องเที่ยว 1</div>
             </div>
+
+            <div class="slide fade">
+                <img src="img/8.jpg" alt="สถานที่ท่องเที่ยว 2" style="width:100%">
+                <div class="text">สถานที่ท่องเที่ยว 2</div>
+            </div>
+
+            <div class="slide fade">
+                <img src="img/11.jpg" alt="สถานที่ท่องเที่ยว 3" style="width:100%">
+                <div class="text">สถานที่ท่องเที่ยว 3</div>
+            </div>
+            
+            <!-- ปุ่มลูกศรสำหรับเปลี่ยนสไลด์ -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </section>
+    <script src="script.js"></script>
+    
+    <section id="places">
+        <h2>สถานที่ท่องเที่ยว</h2>
+        <ul class="place-list">
+            <li>
+                <a href="place1.html">
+                    <span class="place-number">1.</span> เขื่อนเจ้าพระยา
+                </a>
+            </li>
+            <li>
+                <a href="place2.html">
+                    <span class="place-number">2.</span> อุทยานแห่งชาติน้ำตกกะช่อง
+                </a>
+            </li>
+            <li>
+                <a href="place3.html">
+                    <span class="place-number">3.</span> วัดปากคลองมะขามเฒ่า
+                </a>
+            </li>
+            <li>
+                <a href="place4.html">
+                    <span class="place-number">4.</span> ศูนย์ศึกษาและพัฒนาพลังงานทดแทนทุ่งกระถิน
+                </a>
+            </li>
+            <li>
+                <a href="place5.html">
+                    <span class="place-number">5.</span> ตลาดเก่าศรีประจันต์
+                </a>
+            </li>
+            <li>
+                <a href="place6.html">
+                    <span class="place-number">6.</span> วัดพระยืน
+                </a>
+            </li>
+            <li>
+                <a href="place7.html">
+                    <span class="place-number">7.</span> พิพิธภัณฑ์พื้นบ้าน
+                </a>
+            </li>
+            <li>
+                <a href="place8.html">
+                    <span class="place-number">8.</span> สวนสวรรค์ ชัยนาท
+                </a>
+            </li>
+            <li>
+                <a href="place9.html">
+                    <span class="place-number">9.</span> อุทยานนกชัยนาท
+                </a>
+            </li>
+            <li>
+                <a href="place10.html">
+                    <span class="place-number">10.</span> วัดธรรมามูล
+                </a>
+            </li>
+        </ul>
+    </section>
+    
+    <section id="contact">
+        <div class="contact-container">
+            <h2>ติดต่อเรา</h2>
+            <p>หากต้องการข้อมูลเพิ่มเติม สามารถติดต่อเราได้ที่:</p>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> อีเมล: <a href="mailto:info@chaipatour.com">info@chaipatour.com</a></p>
+                <p><i class="fas fa-phone"></i> เบอร์โทรศัพท์: <a href="tel:+66123456789">+66 123 456 789</a></p>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 เที่ยวชัยนาท - แนะนำสถานที่ท่องเที่ยว</p>
+            <ul class="social-links">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+            </ul>
         </div>
     </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
 </body>
 </html>
