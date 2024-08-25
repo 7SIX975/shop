@@ -1,103 +1,10 @@
-/* สไตล์พื้นฐาน */
+/* เริ่มต้นด้วยการตั้งค่าพื้นฐานสำหรับหน้าเว็บ */
 body {
     font-family: "SF Thonburi", Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
-}
-
-/* ปรับส่วน header ให้เข้ากับมือถือ */
-#header {
-    padding: 15px 20px; /* ลดขนาด padding สำหรับมือถือ */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-#header h1 {
-    font-size: 1.5em; /* ลดขนาดฟอนต์สำหรับมือถือ */
-}
-
-#header nav ul {
-    flex-direction: column; /* เปลี่ยนเมนูเป็นแนวตั้งบนมือถือ */
-    gap: 10px;
-}
-
-#header nav ul li a {
-    padding: 10px 15px; /* ปรับ padding ของลิงก์ */
-}
-
-/* ปรับปรุง hero-section */
-#hero-section {
-    padding: 20px; /* เพิ่ม padding รอบๆ เนื้อหา */
-    text-align: center;
-}
-
-#hero-section h2 {
-    font-size: 2em; /* ลดขนาดฟอนต์สำหรับมือถือ */
-}
-
-#hero-section p {
-    font-size: 1em; /* ลดขนาดฟอนต์สำหรับมือถือ */
-}
-
-/* ปรับปรุงปุ่ม */
-.explore-button {
-    padding: 10px 20px; /* ลดขนาดปุ่มสำหรับมือถือ */
-    font-size: 1em;
-}
-
-/* ปรับปรุง section about */
-#about {
-    padding: 40px 10px; /* ลด padding สำหรับมือถือ */
-}
-
-.image-container {
-    width: 100%; /* ปรับภาพให้กว้างเต็มหน้าจอ */
-}
-
-.about-image {
-    width: 100%; /* ปรับภาพให้กว้างเต็มหน้าจอ */
-}
-
-.text-content {
-    max-width: 100%; /* ขยายเนื้อหาให้เต็มหน้าจอ */
-    text-align: left; /* จัดเนื้อหาให้อ่านง่ายบนมือถือ */
-}
-
-/* Media Query สำหรับหน้าจอขนาดเล็ก (เช่น มือถือ) */
-@media screen and (max-width: 768px) {
-    #header nav ul {
-        flex-direction: column; /* เปลี่ยนเมนูเป็นแนวตั้ง */
-        align-items: flex-start;
-    }
-
-    .explore-button {
-        width: 100%; /* ปรับปุ่มให้กว้างเต็มหน้าจอ */
-    }
-
-    .image-container {
-        margin-bottom: 20px;
-    }
-
-    #hero-section h2 {
-        font-size: 1.8em; /* ปรับขนาดฟอนต์ให้เล็กลง */
-    }
-
-    #hero-section p {
-        font-size: 1em; /* ปรับขนาดฟอนต์ให้เล็กลง */
-    }
-
-    #about h2 {
-        font-size: 2em; /* ปรับขนาดฟอนต์ให้เล็กลง */
-    }
-
-    #about p {
-        font-size: 1em; /* ปรับขนาดฟอนต์ให้เล็กลง */
-    }
-
-    .text-content {
-        text-align: justify; /* จัดข้อความให้อ่านง่าย */
-    }
 }
 
 /* สไตล์สำหรับส่วนหัว (Header) */
